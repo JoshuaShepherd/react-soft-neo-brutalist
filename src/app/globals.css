@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6366F1;
+  --secondary: #F43F5E;
+  --accent-yellow: #FDE047;
+  --accent-blue: #60A5FA;
+  --accent-pink: #F472B6;
+  --bg-primary: #F9FAFB;
+  --bg-yellow: #FEF3C7;
+  --bg-blue: #DBEAFE;
+  --bg-pink: #FCE7F3;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .chunky-button {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold tracking-wider uppercase rounded-xl border-4 transition-all duration-200 cursor-pointer select-none;
+    @apply hover:scale-105 active:scale-95;
+    min-height: 56px;
+  }
+  
+  .chunky-button-primary {
+    @apply chunky-button bg-primary text-white border-primary shadow-brutal hover:shadow-brutal-lg;
+  }
+  
+  .chunky-button-secondary {
+    @apply chunky-button bg-secondary text-white border-secondary shadow-brutal hover:shadow-brutal-lg;
+  }
+  
+  .chunky-button-yellow {
+    @apply chunky-button bg-accent-yellow text-black border-yellow-400 shadow-brutal-yellow hover:shadow-brutal-lg;
+  }
+  
+  .chunky-button-blue {
+    @apply chunky-button bg-accent-blue text-black border-blue-500 shadow-brutal-blue hover:shadow-brutal-lg;
+  }
+  
+  .chunky-button-pink {
+    @apply chunky-button bg-accent-pink text-black border-pink-500 shadow-brutal-pink hover:shadow-brutal-lg;
+  }
+  
+  .color-block {
+    @apply rounded-2xl border-4 p-8 transition-all duration-300 hover:scale-105 hover:shadow-brutal-lg;
+  }
+  
+  .color-block-yellow {
+    @apply color-block bg-bg-yellow border-yellow-400;
+  }
+  
+  .color-block-blue {
+    @apply color-block bg-bg-blue border-blue-400;
+  }
+  
+  .color-block-pink {
+    @apply color-block bg-bg-pink border-pink-400;
+  }
+  
+  .section-label {
+    @apply text-sm font-bold uppercase tracking-widest text-text-secondary mb-4;
+  }
+  
+  .chunky-heading {
+    @apply font-clash font-black text-text-primary;
+  }
+  
+  .chunky-input {
+    @apply px-6 py-4 text-lg rounded-xl border-4 border-gray-300 focus:border-primary focus:outline-none transition-all duration-200;
+    min-height: 56px;
+  }
+  
+  .floating-shape {
+    @apply absolute opacity-20 animate-float;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-shadow-brutal {
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+  }
+  
+  .text-shadow-brutal-lg {
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+  }
+  
+  .squish {
+    animation: squish 0.2s ease-out;
+  }
+}
